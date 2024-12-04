@@ -1,7 +1,7 @@
 /**
  * CPSC 450, HW-8
  *
- * NAME: <YOUR NAME>
+ * NAME: Connor Goldschmidt
  * DATE: Fall 2024
  *
  */ 
@@ -33,7 +33,39 @@ public class GraphAlgorithms {
    * vertices to parent vertices with root vertex 0. 
    */
   public static Map<Integer,Integer> mst(Graph g, EdgeLabeling<Integer> l) {
-    // TODO: Implement Prim's mst algorithm
+    Map<Integer, Integer> T = new HashMap<>();
+    Set<Integer> X = new HashSet<>();
+    X.add(0);
+    T.put(0, -1);
+    while(true){
+      Integer minWeight = Integer.MAX_VALUE;
+      Integer uPrime = null;
+      Integer vPrime = null;
+      for (Integer u : X) {
+        for (Integer v : g.adj(u)) {
+          if (!X.contains(v)) {
+            Integer weight;
+            if(l.getLabel(u, v).isEmpty()){
+              weight = l.getLabel(v, u).get();
+            } else {
+              weight = l.getLabel(u, v).get();
+            }
+            if (weight < minWeight) {
+                minWeight = weight;
+                uPrime = u;
+                vPrime = v;
+            }
+          } 
+        }
+      }
+      if (vPrime == null) {
+        break;
+      }
+      X.add(vPrime);
+      T.put(vPrime, uPrime);
+    }
+    return T;
+    
   }
   
   /**
@@ -50,7 +82,30 @@ public class GraphAlgorithms {
    * list is returned. 
    */
   public static List<Integer> shortestPaths2(Graph g, EdgeLabeling<Integer> l, int s) {
-    // TODO: Implement the Bellman-Ford algorithm
+    List<Integer> dist = new ArrayList<>();
+    for(int i = 0; i < g.vertices(); i++){
+      dist.add(i, Integer.MAX_VALUE);
+    }
+    dist.set(s, 0);
+    for(int i = 1; i < g.vertices(); i++){
+      System.out.println(dist);
+      for(int u = 0; u < g.vertices(); u++){
+        for(Integer v : g.adj(u)){
+            if(dist.get(u) != Integer.MAX_VALUE && g.hasEdge(u, v) && dist.get(v) > (dist.get(u) + l.getLabel(u, v).get())){
+              dist.set(v, (dist.get(u) + l.getLabel(u, v).get()));
+            }
+        }
+      }
+    }
+
+    for(int u = 0; u < g.vertices(); u++){
+        for(Integer v : g.adj(u)){
+          if(g.hasEdge(u, v) && dist.get(v) > (dist.get(u) + l.getLabel(u, v).get())){
+            return new ArrayList<>();
+          }
+        }
+      }
+    return dist;
   }
   
   /**
@@ -66,7 +121,9 @@ public class GraphAlgorithms {
    */
   public static List<List<Integer>> allShortestPaths(Graph g, EdgeLabeling<Integer> l) {
     // TODO: Implement the Floyd-Warshall algorithm
+    return new ArrayList<>();
   }
+
   
 }
 

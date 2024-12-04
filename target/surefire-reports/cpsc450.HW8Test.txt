@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: cpsc450.HW8Test
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in cpsc450.HW8Test
+cpsc450.HW8Test.primFiveEdgeTest -- Time elapsed: 0.015 s
+cpsc450.HW8Test.primOppositeFiveEdgeTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.primThreeEdgeTest -- Time elapsed: 0 s
+cpsc450.HW8Test.primOppositeThreeEdgeTest -- Time elapsed: 0 s
+cpsc450.HW8Test.primOneEdgeTest -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordPositiveThreeVertexLongRoute -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordNegativeFourVertex -- Time elapsed: 0 s
+cpsc450.HW8Test.primOneVertexTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordPositiveFourVertex -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordNegativeCycle -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordPositiveThreeVertexShortcut -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordOneVertexTest -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordPositiveTwoVertexWithPath -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordNegativeFiveVertex -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordPositiveTwoVertexNoPath -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordPositiveFourVertexDifferentStart -- Time elapsed: 0.001 s

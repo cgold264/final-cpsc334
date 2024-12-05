@@ -1,20 +1,34 @@
 -------------------------------------------------------------------------------
 Test set: cpsc450.HW8Test
 -------------------------------------------------------------------------------
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in cpsc450.HW8Test
-cpsc450.HW8Test.primFiveEdgeTest -- Time elapsed: 0.015 s
-cpsc450.HW8Test.primOppositeFiveEdgeTest -- Time elapsed: 0.001 s
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in cpsc450.HW8Test
+cpsc450.HW8Test.primFiveEdgeTest -- Time elapsed: 0.013 s
+cpsc450.HW8Test.primOppositeFiveEdgeTest -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordDisconnectedGraphTest -- Time elapsed: 0 s
+cpsc450.HW8Test.floydWarshallNegativeFourVertex -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallPositiveFourVertex -- Time elapsed: 0 s
 cpsc450.HW8Test.primThreeEdgeTest -- Time elapsed: 0 s
 cpsc450.HW8Test.primOppositeThreeEdgeTest -- Time elapsed: 0 s
-cpsc450.HW8Test.primOneEdgeTest -- Time elapsed: 0 s
+cpsc450.HW8Test.primOneEdgeTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallNegativeCycle -- Time elapsed: 0 s
 cpsc450.HW8Test.bellmanFordPositiveThreeVertexLongRoute -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallNegativeFiveVertex -- Time elapsed: 0.001 s
 cpsc450.HW8Test.bellmanFordNegativeFourVertex -- Time elapsed: 0 s
-cpsc450.HW8Test.primOneVertexTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallNegativeEdgesNoCyclesTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.primOneVertexTest -- Time elapsed: 0 s
 cpsc450.HW8Test.bellmanFordPositiveFourVertex -- Time elapsed: 0.001 s
 cpsc450.HW8Test.bellmanFordNegativeCycle -- Time elapsed: 0.001 s
-cpsc450.HW8Test.bellmanFordPositiveThreeVertexShortcut -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordPositiveThreeVertexShortcut -- Time elapsed: 0 s
+cpsc450.HW8Test.floydWarshallDisconnectedGraphTest -- Time elapsed: 0 s
+cpsc450.HW8Test.bellmanFordNegativeEdgesNoNegativeCyclesTest -- Time elapsed: 0 s
 cpsc450.HW8Test.bellmanFordOneVertexTest -- Time elapsed: 0 s
 cpsc450.HW8Test.bellmanFordPositiveTwoVertexWithPath -- Time elapsed: 0.001 s
 cpsc450.HW8Test.bellmanFordNegativeFiveVertex -- Time elapsed: 0 s
+cpsc450.HW8Test.primWeightedCyclicGraphTest -- Time elapsed: 0.001 s
 cpsc450.HW8Test.bellmanFordPositiveTwoVertexNoPath -- Time elapsed: 0 s
-cpsc450.HW8Test.bellmanFordPositiveFourVertexDifferentStart -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallTwoVertexWithPath -- Time elapsed: 0 s
+cpsc450.HW8Test.floydWarshallOneVertex -- Time elapsed: 0 s
+cpsc450.HW8Test.primMultipleMinimumEdgesTest -- Time elapsed: 0.001 s
+cpsc450.HW8Test.floydWarshallPositiveThreeVertexShortcut -- Time elapsed: 0.001 s
+cpsc450.HW8Test.bellmanFordPositiveFourVertexDifferentStart -- Time elapsed: 0 s
+cpsc450.HW8Test.floydWarshallTwoVertexNoPath -- Time elapsed: 0 s

@@ -88,7 +88,6 @@ public class GraphAlgorithms {
     }
     dist.set(s, 0);
     for(int i = 1; i < g.vertices(); i++){
-      System.out.println(dist);
       for(int u = 0; u < g.vertices(); u++){
         for(Integer v : g.adj(u)){
             if(dist.get(u) != Integer.MAX_VALUE && g.hasEdge(u, v) && dist.get(v) > (dist.get(u) + l.getLabel(u, v).get())){
@@ -99,12 +98,12 @@ public class GraphAlgorithms {
     }
 
     for(int u = 0; u < g.vertices(); u++){
-        for(Integer v : g.adj(u)){
-          if(g.hasEdge(u, v) && dist.get(v) > (dist.get(u) + l.getLabel(u, v).get())){
-            return new ArrayList<>();
-          }
+      for(Integer v : g.adj(u)){
+        if(g.hasEdge(u, v) && dist.get(v) > (dist.get(u) + l.getLabel(u, v).get())){
+          return new ArrayList<>();
         }
       }
+    }
     return dist;
   }
   
@@ -120,10 +119,52 @@ public class GraphAlgorithms {
    * if the graph has a negative cycle.
    */
   public static List<List<Integer>> allShortestPaths(Graph g, EdgeLabeling<Integer> l) {
-    // TODO: Implement the Floyd-Warshall algorithm
-    return new ArrayList<>();
-  }
+    int n = g.vertices();
+    int[][][] A = new int[n + 1][n][n];
 
-  
+    for (int u = 0; u < n; u++) {
+        for (int v = 0; v < n; v++) {
+            if (u == v) {
+                A[0][u][v] = 0;
+            } else if (g.hasEdge(u, v)) {
+                A[0][u][v] = l.getLabel(u, v).orElse(Integer.MAX_VALUE);
+            } else {
+                A[0][u][v] = Integer.MAX_VALUE;
+            }
+        }
+    }
+
+    for (int k = 1; k <= n; k++) {
+        for (int u = 0; u < n; u++) {
+            for (int v = 0; v < n; v++) {
+                int withoutK = A[k - 1][u][v];
+                int withK;
+                if (A[k - 1][u][k - 1] != Integer.MAX_VALUE && A[k - 1][k - 1][v] != Integer.MAX_VALUE) {
+                    withK = A[k - 1][u][k - 1] + A[k - 1][k - 1][v];
+                } else {
+                    withK = Integer.MAX_VALUE;
+                }
+                A[k][u][v] = Math.min(withoutK, withK);
+            }
+        }
+    }
+
+    for (int u = 0; u < n; u++) {
+        if (A[n][u][u] < 0) {
+            return new ArrayList<>();
+        }
+    }
+
+    List<List<Integer>> dist = new ArrayList<>();
+    for (int u = 0; u < n; u++) {
+        List<Integer> row = new ArrayList<>();
+        for (int v = 0; v < n; v++) {
+            row.add(A[n][u][v]);
+        }
+        dist.add(row);
+    }
+
+    return dist;
+    }
 }
 
